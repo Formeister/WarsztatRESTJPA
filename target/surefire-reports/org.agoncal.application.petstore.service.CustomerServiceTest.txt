@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: org.agoncal.application.petstore.service.CustomerServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.228 sec <<< FAILURE! - in org.agoncal.application.petstore.service.CustomerServiceTest
+should_crud(org.agoncal.application.petstore.service.CustomerServiceTest)  Time elapsed: 0.079 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: org/apache/commons/codec/binary/Base64
+	at org.agoncal.application.petstore.service.CustomerServiceTest.should_crud(CustomerServiceTest.java:71)
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.codec.binary.Base64 from [Module "deployment.test.war:main" from Service Module Loader]
+	at org.agoncal.application.petstore.service.CustomerServiceTest.should_crud(CustomerServiceTest.java:71)
+

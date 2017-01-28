@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: org.agoncal.application.petstore.view.admin.CustomerBeanTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.111 sec <<< FAILURE! - in org.agoncal.application.petstore.view.admin.CustomerBeanTest
+should_crud(org.agoncal.application.petstore.view.admin.CustomerBeanTest)  Time elapsed: 0.022 sec  <<< ERROR!
+java.lang.NoClassDefFoundError: org/apache/commons/codec/binary/Base64
+	at org.agoncal.application.petstore.view.admin.CustomerBeanTest.should_crud(CustomerBeanTest.java:66)
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.codec.binary.Base64 from [Module "deployment.test.war:main" from Service Module Loader]
+	at org.agoncal.application.petstore.view.admin.CustomerBeanTest.should_crud(CustomerBeanTest.java:66)
+
