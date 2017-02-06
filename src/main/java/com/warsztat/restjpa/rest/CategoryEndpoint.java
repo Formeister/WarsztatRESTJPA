@@ -43,6 +43,7 @@ public class CategoryEndpoint
    // ======================================
 
    @POST
+   //@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
    @Consumes( {"application/xml", "application/json"})
    public Response create(Category entity)
    {
@@ -110,7 +111,7 @@ public class CategoryEndpoint
    {
       try
       {
-         entity = em.merge(entity);
+         em.merge(entity);
       }
       catch (OptimisticLockException e)
       {

@@ -25,7 +25,6 @@ import com.warsztat.restjpa.constraints.Login;
          @NamedQuery(name = User.FIND_BY_LOGIN, query = "SELECT c FROM User c WHERE c.login = :login"),
          @NamedQuery(name = User.FIND_BY_EMAIL, query = "SELECT c FROM User c WHERE c.email = :email"),
          @NamedQuery(name = User.FIND_BY_LOGIN_PASSWORD, query = "SELECT c FROM User c WHERE c.login = :login AND c.password = :password"),
-         @NamedQuery(name = User.FIND_BY_UUID, query = "SELECT c FROM User c WHERE c.uuid = :uuid"),
          @NamedQuery(name = User.FIND_ALL, query = "SELECT c FROM User c")
 })
 @XmlRootElement
@@ -73,10 +72,6 @@ public class User implements Serializable
    @NotNull
    @Size(min = 1, max = 256)
    private String password;
-
-   @Column(length = 256)
-   @Size(min = 1, max = 256)
-   private String uuid;
 
    private UserRole role;
 
@@ -225,16 +220,6 @@ public class User implements Serializable
    public void setRole(UserRole role)
    {
       this.role = role;
-   }
-
-   public String getUuid()
-   {
-      return uuid;
-   }
-
-   public void setUuid(String uuid)
-   {
-      this.uuid = uuid;
    }
 
    public String getPassword()

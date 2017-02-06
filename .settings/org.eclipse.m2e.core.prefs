@@ -1,4 +1,4 @@
-activeProfiles=arquillian-wildfly-remote
+activeProfiles=arquillian-wildfly-managed
 eclipse.preferences.version=1
 resolveWorkspaceProjects=true
 version=1

@@ -18,8 +18,8 @@ public class OrderLine implements Serializable
    /**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-@Id
+   private static final long serialVersionUID = 1L;
+   @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
    @Column(name = "id", updatable = false, nullable = false)
    private Long id;

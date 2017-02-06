@@ -41,14 +41,11 @@ public class PurchaseOrderService extends AbstractService<PurchaseOrder>implemen
 public PurchaseOrder createOrder(@NotNull User user, final List<ShoppingCartItem> cartItems)
    {
 
-      // OMake sure the object is valid
       if (cartItems == null || cartItems.size() == 0)
-         throw new ValidationException("Shopping cart is empty"); // TODO exception bean validation
+         throw new ValidationException("Koszyk jest pusty.");
 
-      // Creating the order
       PurchaseOrder order = new PurchaseOrder(entityManager.merge(user), user.getHomeAddress());
 
-      // From the shopping cart we create the order lines
       Set<OrderLine> orderLines = new HashSet<>();
 
       for (ShoppingCartItem cartItem : cartItems)
@@ -57,7 +54,6 @@ public PurchaseOrder createOrder(@NotNull User user, final List<ShoppingCartItem
       }
       order.setOrderLines(orderLines);
 
-      // Persists the object to the database
       entityManager.persist(order);
 
       return order;

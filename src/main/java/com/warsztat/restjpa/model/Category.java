@@ -12,9 +12,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Cacheable
 @NamedQueries({
-         // TODO fetch doesn't work with GlassFIsh
-         // @NamedQuery(name = Category.FIND_BY_NAME, query =
-         // "SELECT c FROM Category c LEFT JOIN FETCH c.actions WHERE c.name = :pname"),
          @NamedQuery(name = Category.FIND_BY_NAME, query = "SELECT c FROM Category c WHERE c.name = :pname"),
          @NamedQuery(name = Category.FIND_ALL, query = "SELECT c FROM Category c")
 })

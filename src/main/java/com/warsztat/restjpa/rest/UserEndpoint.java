@@ -3,6 +3,7 @@ package com.warsztat.restjpa.rest;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.OptimisticLockException;
@@ -17,11 +18,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriBuilder;
 
 import com.warsztat.restjpa.model.User;
+import com.warsztat.restjpa.service.UserService;
 import com.warsztat.restjpa.util.Loggable;
 
 
@@ -31,6 +34,9 @@ import com.warsztat.restjpa.util.Loggable;
 public class UserEndpoint
 {
 
+	@Inject
+	UserService userService;
+	
    // ======================================
    // =             Attributes             =
    // ======================================
@@ -86,6 +92,25 @@ public class UserEndpoint
       return Response.ok(entity).build();
    }
 
+   @GET
+   @Path("/count")
+   @Produces(MediaType.TEXT_PLAIN)
+   public int countAll()
+   {
+	  int count = 0;
+	  
+	  count = userService.countAllUsers();
+	  //TypedQuery<User> typedQuery = user.createNamedQuery(User.FIND_ALL, User.class);
+	  
+      //TypedQuery<User> findAllQuery = em.createQuery("SELECT c FROM User c ORDER BY c.id", User.class);
+
+      //final List<User> results = typedQuery.getResultList();
+      
+      //count = results.size();
+      
+      return count;
+   }
+   
    @GET
    @Produces( {"application/xml", "application/json"})
    public List<User> listAll(@QueryParam("start") Integer startPosition, @QueryParam("max") Integer maxResult)

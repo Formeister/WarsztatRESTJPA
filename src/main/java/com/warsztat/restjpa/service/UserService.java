@@ -45,7 +45,6 @@ public UserService()
    public boolean doesLoginAlreadyExist(@NotNull String login)
    {
 
-      // Login has to be unique
       TypedQuery<User> typedQuery = entityManager.createNamedQuery(User.FIND_BY_LOGIN, User.class);
       typedQuery.setParameter("login", login);
       try
@@ -93,6 +92,14 @@ public UserService()
    {
       TypedQuery<User> typedQuery = entityManager.createNamedQuery(User.FIND_ALL, User.class);
       return typedQuery.getResultList();
+   }
+   
+   //COUNT USERS
+   public int countAllUsers()
+   {
+      int count = 0;
+      count = findAllUsers().size();
+      return count;
    }
 
    public User updateUser(@NotNull User user)

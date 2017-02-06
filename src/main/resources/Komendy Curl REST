@@ -1,0 +1,17 @@
+curl -X GET http://localhost:8080/WarsztatRESTJPA/rest/users
+
+
+(id, version, login, password, first_name, last_name, telephone, email, date_of_birth, street, city, zip_code)
+'andrzej', 'andrzejpass', 'Andrzej', 'Nowak', '656 345 239', 'andrzejek@mail.com', '1973-02-06', 'Taneczna 2', 'Kocborowo', '22-313'
+
+curl -H "Content-Type: application/json" -X POST -d "{"version":1,"login":"zenek22","first_name":"Zaenek","last_name":"Kowal","telephone":231543654,"email":"zeneczek@mail.com","date_of_birth":"1992-02-06","street":"Ulica 5","city":"Miasteczko","zip_code":"33-231"}" http://localhost:8080/WarsztatRESTJPA/rest/users
+
+curl -X POST -H 'Content-Type: application/json' -d '{"version":1,"login":"zenek22","first_name":"Zaenek","last_name":"Kowal","telephone":231543654,"email":"zeneczek@mail.com","date_of_birth":"1992-02-06","street":"Ulica 5","city":"Miasteczko","zip_code":"33-231"}' http://localhost:8080/WarsztatRESTJPA/rest/users
+
+{"version":1,"login":"zenek22","first_name":"Zaenek","last_name":"Kowal","telephone":231543654,"email":"zeneczek@mail.com","date_of_birth":"1992-02-06","street":"Ulica 5","city":"Miasteczko","zip_code":"33-231"}
+
+{"version":1,"login":"zenek22","first_name":"Zaenek","last_name":"Kowal","telephone":231543654,"email":"zeneczek@mail.com","date_of_birth":"1992-02-06","homeAddress":[{"street":"Ulica 5","city":"Miasteczko","zip_code":"33-231"}]}
+
+{"id":1, "name":"Bla", "description":"Bla", "version":1}
+
+curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" -d @categoryPOST.json "http://localhost:8080/WarsztatRESTJPA/rest/categories"

@@ -94,8 +94,6 @@ public abstract class AbstractService<T>
 
       CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 
-      // Populate count
-
       CriteriaQuery<Long> countCriteria = builder.createQuery(Long.class);
       Root<T> root = countCriteria.from(entityClass);
       countCriteria = countCriteria.select(builder.count(root)).where(getSearchPredicates(root, example));
@@ -107,8 +105,6 @@ public abstract class AbstractService<T>
    {
 
       CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-
-      // Populate pageItems
 
       CriteriaQuery<T> criteria = builder.createQuery(entityClass);
       Root<T> root = criteria.from(entityClass);

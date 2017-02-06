@@ -59,6 +59,13 @@
 				</h:panelGroup>
 			</f:validateBean>
 			
+			<h:panelGrid columns="3">
+			<h:outputLabel for="countUsers" value="Użytkowników jest aż:"/>
+			<h:outputText value="&#160;&#160;&#160;" />
+			<h:outputText id="countUsers" value="#{userBean.countAll()}"/>
+			<h:outputText/>
+			</h:panelGrid>
+			
 			<h:dataTable id="userBeanPageItems" styleClass="table table-striped" value="#{userBean.pageItems}" var="_item">
 				<h:column>
 					<f:facet name="header">

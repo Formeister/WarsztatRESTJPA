@@ -15,7 +15,6 @@ import java.util.List;
 
 
 @Named
-//@RequestScoped TODO should be request scoped
 @SessionScoped
 @Loggable
 @CatchException
@@ -60,15 +59,9 @@ public class CatalogBean extends AbstractBean implements Serializable {
         return "showitem.faces";
     }
 
-    /**
-     * Can also be invoked in a RESTful way :
-     * http://localhost:8080/WarsztatRESTJPA/searchresult.xhtml?keyword=tail
-     */
     public String doSearch() {
         items = catalogService.searchItems(keyword);
-//        return "searchresult";
         return "searchresult.faces&faces-redirect=true";
-//        return "searchresult.faces?keyword=" + keyword + "&faces-redirect=true";
     }
 
     // ======================================

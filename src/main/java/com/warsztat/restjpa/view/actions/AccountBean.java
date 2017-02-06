@@ -89,7 +89,6 @@ public class AccountBean extends AbstractBean implements Serializable {
         return "main.faces";
     }
 
-
     public String doLogout() {
         loggedinUser = null;
         // Stop conversation

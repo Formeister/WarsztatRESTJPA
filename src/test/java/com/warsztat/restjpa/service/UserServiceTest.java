@@ -59,6 +59,16 @@ public class UserServiceTest
    {
       Assert.assertNotNull(userservice);
    }
+   
+   //COUNT TEST
+   @Test
+   public void count_users()
+   {
+	   Address address = new Address("Dummy value", "Dummy value", "DV");
+	   User user = new User("Dummy value", "Dummy value", "Dummy", "Dummy value", "Dummy value", address);
+	   user = userservice.persist(user);
+	   assertEquals(1, userservice.countAllUsers());
+   }
 
    @Test
    public void should_crud()

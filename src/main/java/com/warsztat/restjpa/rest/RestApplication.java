@@ -1,5 +1,8 @@
 package com.warsztat.restjpa.rest;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 //import java.util.HashSet;
@@ -14,14 +17,14 @@ public class RestApplication extends Application
    // ======================================
 
    // TODO Not sure this is still needed for portability in EE 7
-//   @Override
-//   public Set<Class<?>> getClasses()
-//   {
-//      Set<Class<?>> classes = new HashSet<>();
-//      classes.add(CategoryEndpoint.class);
-//      classes.add(UserEndpoint.class);
-//      classes.add(ItemEndpoint.class);
-//      classes.add(ActionEndpoint.class);
-//      return classes;
-//   }
+   @Override
+   public Set<Class<?>> getClasses()
+   {
+      Set<Class<?>> classes = new HashSet<>();
+      classes.add(CategoryEndpoint.class);
+      classes.add(UserEndpoint.class);
+      classes.add(ItemEndpoint.class);
+      classes.add(ActionEndpoint.class);
+      return classes;
+   }
 }

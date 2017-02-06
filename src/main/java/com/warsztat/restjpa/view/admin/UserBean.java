@@ -282,6 +282,13 @@ public class UserBean implements Serializable
       return this.entityManager.createQuery(
             criteria.select(criteria.from(User.class))).getResultList();
    }
+   
+   public int countAll()
+   {
+	   int count=0;
+	   count = getAll().size();
+	   return count;
+   }
 
    @Resource
    private SessionContext sessionContext;

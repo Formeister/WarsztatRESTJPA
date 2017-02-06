@@ -17,7 +17,7 @@
     <!-- Test -->
     <version.derby>10.10.1.1</version.derby>
     <version.junit>4.12</version.junit>
-    <version.equalsverifier>2.2</version.equalsverifier>
+    <version.equalsverifier>2.2.1</version.equalsverifier>
     <version.arquillian_core>1.1.12.Final</version.arquillian_core>
     <version.arquillian.wildfly>8.2.1.Final</version.arquillian.wildfly>
     <!-- App servers -->
@@ -109,7 +109,7 @@
         <artifactId>jconsole</artifactId>
         <version>1.8</version>
         <scope>system</scope>
-        <systemPath>C:\Program Files\Java\jdk1.7.0_80\lib\jconsole.jar</systemPath>
+        <systemPath>C:\Program Files\Java\jdk1.8.0_121\lib\jconsole.jar</systemPath>
     </dependency>
     </dependencies>
   </dependencyManagement>

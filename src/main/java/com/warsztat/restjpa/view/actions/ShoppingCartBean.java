@@ -57,14 +57,14 @@ public class ShoppingCartBean extends AbstractBean implements Serializable {
 
         boolean itemFound = false;
         for (ShoppingCartItem cartItem : cartItems) {
-            // If item already exists in the shopping cart we just change the quantity
+            // If item already exists in the shopping cart - change the quantity
             if (cartItem.getItem().equals(item)) {
                 cartItem.setQuantity(cartItem.getQuantity() + 1);
                 itemFound = true;
             }
         }
         if (!itemFound)
-            // Otherwise it's added to the shopping cart
+            // Otherwise add to the shopping cart
             cartItems.add(new ShoppingCartItem(item, 1));
 
         return "showcart.faces";
@@ -119,7 +119,7 @@ public class ShoppingCartBean extends AbstractBean implements Serializable {
 
         Float total = 0f;
 
-        // Sum up the quantities
+        // Sum up quantities
         for (ShoppingCartItem cartItem : cartItems) {
             total += (cartItem.getSubTotal());
         }
